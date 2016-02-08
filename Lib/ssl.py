@@ -1018,7 +1018,7 @@ class SSLContext(object):
         if hostname is not None:
             engine = context.createSSLEngine(hostname, addr[1])
         else:
-            engine = context.createSSLEngine(*addr)
+            engine = context.createSSLEngine(addr[0], addr[1])  # addr could be ipv6, ony extract relevant parts
 
         # apparently this can be used to enforce hostname verification
         if hostname is not None and self._check_hostname:
