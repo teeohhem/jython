@@ -289,7 +289,6 @@ def get_default_verify_paths():
 
     if java_cert_file is not None and os.path.isfile(java_cert_file):
         cafile = java_cert_file
-        capath = os.path.dirname(java_cert_file)
     else:
         if default_cert_dir_env is not None:
             capath = default_cert_dir_env if os.path.isdir(default_cert_dir_env) else None
