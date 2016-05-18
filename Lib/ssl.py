@@ -305,7 +305,7 @@ def get_default_verify_paths():
                     capath = os.path.dirname(cafile)
 
     return DefaultVerifyPaths(cafile if os.path.isfile(cafile) else None,
-                              capath if os.path.isdir(capath) else None,
+                              capath if capath and os.path.isdir(capath) else None,
                               'SSL_CERT_FILE', default_cert_file_env,
                               'SSL_CERT_DIR', default_cert_dir_env)
 
